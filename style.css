@@ -1,0 +1,225 @@
+/* Apply border-box to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Palette:
+   Light Shades: #fff;
+   Light Accent: #f9f9f9, #f0f0f0, #e6e6e6;
+   Main Brand Color: #b8860b (yellowish brown);
+   Dark Accent: #999, #ccc;
+   Dark Shades: #664d00, #333, #000;
+*/
+
+.profile-section {
+  text-align: center;
+}
+
+.name {
+  display: inline-block;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  color: #fffcf2; 
+}
+
+.profile-pic {
+  display: inline-block;
+  width: 100px;
+  height: auto;
+  border-radius: 10%;
+  margin: 5px;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #b8860b;
+  display: flex;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #664d00;
+}
+
+/* 3-Column Layout - COMMENTED OUT FOR FLEXBOX */
+/* .content-wrapper {
+  display: flex;
+  gap: 0;
+  min-height: 400px;
+}
+
+.left-column {
+  flex: 1;
+  background-color: #664d00;
+  color: #fff;
+  padding: 20px;
+}
+
+.center-column {
+  flex: 2;
+  background-color: #e6e6e6;
+  color: #333;
+  padding: 20px;
+}
+
+.right-column {
+  flex: 1;
+  background-color: #664d00;
+  color: #fff;
+  padding: 20px;
+} */
+
+/* Flexbox Container Styling */
+.container {
+  display: flex;
+  background-color: transparent;
+  padding: 0;
+  min-height: 400px;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* Flexbox Box Styling */
+.box {
+  background-color: #664d00;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Individual box flex-grow values */
+.left-column.box {
+  flex-grow: 2;
+}
+
+.center-column.box {
+  flex-grow: 1;
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+.right-column.box {
+  flex-grow: 1;
+}
+
+.fourth-column.box {
+  flex-grow: 1;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Vertical Layout for Interests Page (Bonus) */
+.container.vertical-layout {
+  flex-direction: column;
+  height: auto;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+header{
+  background-color: #664d00;
+}
+footer {background-color: #b8860b; 
+  text-align: center; 
+  padding: 10px; 
+  color: #fdf8c9;
+}
+
+/* Form Styling */
+form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+form label {
+  color: #333;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #b8860b;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+form input[type="radio"] {
+  margin: 5px 5px 5px 0;
+}
+
+form button[type="submit"] {
+  background-color: #b8860b;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #664d00;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #664d00;
+  box-shadow: 0 0 5px rgba(102, 77, 0, 0.5);
+}
+
+/* Hover Styles for Links, Buttons, and Images */
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+  color: #b8860b;
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(184, 134, 11, 0.5);
+}

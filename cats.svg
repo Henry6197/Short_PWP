@@ -1,0 +1,243 @@
+<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes wiggleTail { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(20deg); } 75% { transform: rotate(-15deg); } }
+      @keyframes blink { 0%, 90%, 100% { ry: 3.5; } 95% { ry: 0.5; } }
+      @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes pulse { 0%, 100% { r: 3.5; } 50% { r: 4.5; } }
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+      .tail-left { animation: wiggleTail 1.5s infinite; transform-origin: 65px 110px; }
+      .tail-right { animation: wiggleTail 1.5s infinite reverse; transform-origin: 135px 110px; }
+      .eye-left { animation: blink 3s infinite; }
+      .eye-right { animation: blink 3s infinite 0.5s; }
+      .body-left { animation: bounce 2s infinite; }
+      .body-right { animation: bounce 2.2s infinite 0.3s; }
+      .sparkle1 { animation: spin 8s linear infinite; transform-origin: 75px 25px; }
+      .sparkle2 { animation: spin 6s linear infinite reverse; transform-origin: 125px 20px; }
+      .heart { animation: float 2s ease-in-out infinite; }
+    </style>
+
+    <!-- Gradients for cool effects -->
+    <radialGradient id="catGlowLeft" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#FF8C42;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="catGlowRight" cx="70%" cy="30%">
+      <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#4A90E2;stop-opacity:0" />
+    </radialGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background with gradient -->
+  <rect width="200" height="160" fill="#f0f8ff" opacity="0.3"/>
+
+  <!-- EPIC LEFT CAT (ORANGE WARRIOR) -->
+  <g id="cat-left" filter="url(#shadow)">
+    <!-- Aura glow -->
+    <circle cx="50" cy="80" r="40" fill="url(#catGlowLeft)"/>
+    <!-- Shadow -->
+    <ellipse cx="50" cy="140" rx="24" ry="6" fill="#00000025"/>
+    
+    <!-- Body with gradient effect -->
+    <defs>
+      <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%">
+        <stop offset="0%" style="stop-color:#FF6B1A"/>
+        <stop offset="50%" style="stop-color:#FF8C42"/>
+        <stop offset="100%" style="stop-color:#FF6B1A"/>
+      </linearGradient>
+    </defs>
+    <ellipse class="body-left" cx="50" cy="90" rx="26" ry="37" fill="url(#bodyGrad)" stroke="#FF4500" stroke-width="2.5" filter="url(#glow)"/>
+    
+    <!-- Stripe pattern -->
+    <ellipse cx="45" cy="80" rx="10" ry="22" fill="#00000020"/>
+    <ellipse cx="55" cy="95" rx="9" ry="20" fill="#00000015"/>
+    
+    <!-- Head -->
+    <circle cx="50" cy="45" r="21" fill="#FF8C42" stroke="#FF4500" stroke-width="2.5" filter="url(#glow)"/>
+    
+    <!-- Ears with inner glow -->
+    <polygon points="40,25 34,2 46,18" fill="#FF8C42" stroke="#FF4500" stroke-width="2"/>
+    <polygon points="60,25 66,2 54,18" fill="#FF8C42" stroke="#FF4500" stroke-width="2"/>
+    <polygon points="40,23 37,10 44,22" fill="#FFD4A3" filter="url(#glow)"/>
+    <polygon points="60,23 63,10 56,22" fill="#FFD4A3" filter="url(#glow)"/>
+    
+    <!-- Epic eyes with multiple layers -->
+    <circle class="eye-left" cx="45" cy="40" r="4" fill="#1a1a1a" filter="url(#glow)"/>
+    <circle cx="55" cy="40" r="4" fill="#1a1a1a" filter="url(#glow)"/>
+    <!-- Large eye shine -->
+    <circle cx="46.5" cy="37" r="2" fill="#FFFF00" filter="url(#glow)"/>
+    <circle cx="57.5" cy="37" r="2" fill="#FFFF00" filter="url(#glow)"/>
+    <!-- Medium shine -->
+    <circle cx="45" cy="42" r="1.2" fill="#FFF" opacity="0.8"/>
+    <circle cx="56" cy="42" r="1.2" fill="#FFF" opacity="0.8"/>
+    <!-- Extra shine -->
+    <circle cx="44" cy="38" r="0.6" fill="#FFF" opacity="0.6"/>
+    <circle cx="55" cy="38" r="0.6" fill="#FFF" opacity="0.6"/>
+    
+    <!-- Nose with 3D effect -->
+    <polygon points="50,47 48,53 52,53" fill="#FF1493" stroke="#C71585" stroke-width="1" filter="url(#glow)"/>
+    
+    <!-- Expressive mouth -->
+    <path d="M 50 53 Q 47 56 43 55" stroke="#FF0090" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M 50 53 Q 53 56 57 55" stroke="#FF0090" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+    
+    <!-- Cheeky tongue -->
+    <ellipse cx="50" cy="58" rx="2.5" ry="3.5" fill="#FF69B4" filter="url(#glow)"/>
+    
+    <!-- Epic whiskers with glow -->
+    <line x1="30" y1="45" x2="8" y2="42" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    <line x1="30" y1="50" x2="8" y2="53" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    <line x1="70" y1="45" x2="92" y2="42" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    <line x1="70" y1="50" x2="92" y2="53" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    
+    <!-- Whiskertips sparkle -->
+    <circle cx="8" cy="42" r="1.5" fill="#FFFF00" opacity="0.7"/>
+    <circle cx="92" cy="42" r="1.5" fill="#FFFF00" opacity="0.7"/>
+    
+    <!-- Epic curly tail -->
+    <path class="tail-left" d="M 66 115 Q 85 95 92 70 Q 95 55 85 50 Q 80 48 75 52" stroke="#FF8C42" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    <path class="tail-left" d="M 66 115 Q 85 95 92 70 Q 95 55 85 50 Q 80 48 75 52" stroke="#FF4500" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- Paws -->
+    <ellipse cx="38" cy="128" rx="8" ry="14" fill="#FF8C42" stroke="#FF4500" stroke-width="1.5" filter="url(#glow)"/>
+    <ellipse cx="62" cy="128" rx="8" ry="14" fill="#FF8C42" stroke="#FF4500" stroke-width="1.5" filter="url(#glow)"/>
+    
+    <!-- Paw pads -->
+    <ellipse cx="38" cy="142" rx="5" ry="6" fill="#FFD4A3" stroke="#FF4500" stroke-width="1" filter="url(#glow)"/>
+    <ellipse cx="62" cy="142" rx="5" ry="6" fill="#FFD4A3" stroke="#FF4500" stroke-width="1" filter="url(#glow)"/>
+    
+    <!-- Toe marks -->
+    <circle cx="35" cy="139" r="1.2" fill="#FF4500"/>
+    <circle cx="41" cy="139" r="1.2" fill="#FF4500"/>
+    <circle cx="59" cy="139" r="1.2" fill="#FF4500"/>
+    <circle cx="65" cy="139" r="1.2" fill="#FF4500"/>
+  </g>
+
+  <!-- EPIC RIGHT CAT (COOL BLUE NINJA) -->
+  <g id="cat-right" filter="url(#shadow)">
+    <!-- Aura glow -->
+    <circle cx="150" cy="80" r="40" fill="url(#catGlowRight)"/>
+    <!-- Shadow -->
+    <ellipse cx="150" cy="140" rx="24" ry="6" fill="#00000025"/>
+    
+    <!-- Body with gradient -->
+    <defs>
+      <linearGradient id="bodyGradBlue" x1="0%" y1="0%" x2="100%">
+        <stop offset="0%" style="stop-color:#1E90FF"/>
+        <stop offset="50%" style="stop-color:#4A90E2"/>
+        <stop offset="100%" style="stop-color:#1E90FF"/>
+      </linearGradient>
+    </defs>
+    <ellipse class="body-right" cx="150" cy="90" rx="26" ry="37" fill="url(#bodyGradBlue)" stroke="#003DA5" stroke-width="2.5" filter="url(#glow)"/>
+    
+    <!-- Stripe pattern -->
+    <ellipse cx="145" cy="80" rx="10" ry="22" fill="#00000020"/>
+    <ellipse cx="155" cy="95" rx="9" ry="20" fill="#00000015"/>
+    
+    <!-- Head -->
+    <circle cx="150" cy="45" r="21" fill="#4A90E2" stroke="#003DA5" stroke-width="2.5" filter="url(#glow)"/>
+    
+    <!-- Ears -->
+    <polygon points="140,25 134,2 146,18" fill="#4A90E2" stroke="#003DA5" stroke-width="2"/>
+    <polygon points="160,25 166,2 154,18" fill="#4A90E2" stroke="#003DA5" stroke-width="2"/>
+    <polygon points="140,23 137,10 144,22" fill="#00BFFF" filter="url(#glow)"/>
+    <polygon points="160,23 163,10 156,22" fill="#00BFFF" filter="url(#glow)"/>
+    
+    <!-- SUPER COOL CYBER SUNGLASSES -->
+    <circle cx="141" cy="38" r="6" fill="none" stroke="#00FF00" stroke-width="2.5" filter="url(#glow)"/>
+    <circle cx="159" cy="38" r="6" fill="none" stroke="#00FF00" stroke-width="2.5" filter="url(#glow)"/>
+    <!-- Sunglasses lens glow -->
+    <circle cx="141" cy="38" r="5.5" fill="#00FF0015"/>
+    <circle cx="159" cy="38" r="5.5" fill="#00FF0015"/>
+    <!-- Bridge -->
+    <rect x="147" y="36.5" width="6" height="3" fill="#00FF00" filter="url(#glow)"/>
+    <!-- Lens shine -->
+    <path d="M 136 33 Q 141 31 146 33" stroke="#00FF00" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M 154 33 Q 159 31 164 33" stroke="#00FF00" stroke-width="1.5" fill="none" opacity="0.6"/>
+    
+    <!-- Eyes behind glasses -->
+    <circle class="eye-right" cx="141" cy="38" r="4" fill="#000" opacity="0.8" filter="url(#glow)"/>
+    <circle cx="159" cy="38" r="4" fill="#000" opacity="0.8" filter="url(#glow)"/>
+    <!-- Eye shine through glasses -->
+    <circle cx="142.5" cy="35" r="1.8" fill="#00FF00" opacity="0.7"/>
+    <circle cx="160.5" cy="35" r="1.8" fill="#00FF00" opacity="0.7"/>
+    
+    <!-- Nose -->
+    <polygon points="150,47 148,53 152,53" fill="#FF1493" stroke="#C71585" stroke-width="1" filter="url(#glow)"/>
+    
+    <!-- Cool smirk -->
+    <path d="M 150 53 Q 147 56 143 55" stroke="#FF0090" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M 150 53 Q 153 56 157 55" stroke="#FF0090" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+    
+    <!-- Tongue -->
+    <ellipse cx="150" cy="58" rx="2.5" ry="3.5" fill="#FF69B4" filter="url(#glow)"/>
+    
+    <!-- Epic whiskers -->
+    <line x1="130" y1="45" x2="108" y2="42" stroke="#00FFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    <line x1="130" y1="50" x2="108" y2="53" stroke="#00FFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    <line x1="170" y1="45" x2="192" y2="42" stroke="#00FFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    <line x1="170" y1="50" x2="192" y2="53" stroke="#00FFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9" filter="url(#glow)"/>
+    
+    <!-- Whiskertips sparkle -->
+    <circle cx="108" cy="42" r="1.5" fill="#00FFFF" opacity="0.7"/>
+    <circle cx="192" cy="42" r="1.5" fill="#00FFFF" opacity="0.7"/>
+    
+    <!-- Epic tail -->
+    <path class="tail-right" d="M 134 115 Q 115 95 108 70 Q 105 55 115 50 Q 120 48 125 52" stroke="#4A90E2" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    <path class="tail-right" d="M 134 115 Q 115 95 108 70 Q 105 55 115 50 Q 120 48 125 52" stroke="#003DA5" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- Paws -->
+    <ellipse cx="138" cy="128" rx="8" ry="14" fill="#4A90E2" stroke="#003DA5" stroke-width="1.5" filter="url(#glow)"/>
+    <ellipse cx="162" cy="128" rx="8" ry="14" fill="#4A90E2" stroke="#003DA5" stroke-width="1.5" filter="url(#glow)"/>
+    
+    <!-- Paw pads -->
+    <ellipse cx="138" cy="142" rx="5" ry="6" fill="#00BFFF" stroke="#003DA5" stroke-width="1" filter="url(#glow)"/>
+    <ellipse cx="162" cy="142" rx="5" ry="6" fill="#00BFFF" stroke="#003DA5" stroke-width="1" filter="url(#glow)"/>
+    
+    <!-- Toe marks -->
+    <circle cx="135" cy="139" r="1.2" fill="#003DA5"/>
+    <circle cx="141" cy="139" r="1.2" fill="#003DA5"/>
+    <circle cx="159" cy="139" r="1.2" fill="#003DA5"/>
+    <circle cx="165" cy="139" r="1.2" fill="#003DA5"/>
+  </g>
+
+  <!-- EPIC FLOATING HEARTS WITH ANIMATION -->
+  <g id="hearts">
+    <g class="heart" style="animation-delay: 0s;">
+      <path d="M 100 28 C 100 22 104 22 104 28 C 104 22 108 22 108 28 Q 108 36 100 42 Q 92 36 92 28 C 92 22 96 22 100 28" fill="#FF1493" filter="url(#glow)"/>
+    </g>
+    <g class="heart" style="animation-delay: 0.5s;">
+      <path d="M 95 18 C 95 14 97.5 14 97.5 18 C 97.5 14 100 14 100 18 Q 100 22 95 26 Q 90 22 90 18 C 90 14 92.5 14 95 18" fill="#FFB6C1" filter="url(#glow)" opacity="0.8" transform="scale(0.8)"/>
+    </g>
+    <g class="heart" style="animation-delay: 1s;">
+      <path d="M 105 20 C 105 16 107 16 107 20 C 107 16 109 16 109 20 Q 109 24 105 28 Q 101 24 101 20 C 101 16 103 16 105 20" fill="#FF69B4" filter="url(#glow)" opacity="0.7" transform="scale(0.8)"/>
+    </g>
+  </g>
+
+  <!-- EPIC SPINNING SPARKLES -->
+  <g class="sparkle1" id="sparkles1">
+    <polygon points="75,18 76,21 79,22 76,24 77,27 75,25 72,26 73,23 71,22 74,21" fill="#FFD700" filter="url(#glow)"/>
+  </g>
+  <g class="sparkle2" id="sparkles2">
+    <polygon points="125,15 126,17 128,18 126,19 127,21 125,20 123,21 124,19 122,18 124,17" fill="#00FFFF" filter="url(#glow)"/>
+  </g>
+
+  <!-- Extra sparkles around -->
+  <g id="extra-sparkles" opacity="0.8">
+    <polygon points="60,60 61,62 63,63 61,65 62,67 60,66 58,67 59,65 57,63 59,62" fill="#FFD700" filter="url(#glow)"/>
+    <polygon points="140,65 141,67 143,68 141,70 142,72 140,71 138,72 139,70 137,68 139,67" fill="#00FFFF" filter="url(#glow)"/>
+    <polygon points="70,120 71,121 72,122 71,123 72,124 70,123 68,124 69,123 68,122 69,121" fill="#FFD700" opacity="0.6" filter="url(#glow)"/>
+    <polygon points="130,125 131,126 132,127 131,128 132,129 130,128 128,129 129,128 128,127 129,126" fill="#00FFFF" opacity="0.6" filter="url(#glow)"/>
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <section class="profile-section">
+      <img class="profile-pic" src="cats.svg" alt="Two Cool Cats">
+      <div class="name">
+        <h3 class="name">Henry Short</h3>
+        <em class="name">henry.short08@gmail.com</em>
+      </div>
+    </section>
+  </header>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="intrests.html">My Interests</a></li>
+      <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="content-wrapper container">
+      <section class="left-column box">
+        <h2>Quick Links</h2>
+        <ul>
+          <li>
+            <strong>Email</strong>
+            <p><a href="mailto:henry.short08@gmail.com">henry.short08@gmail.com</a></p>
+          </li>
+          <li>
+            <strong>Professional</strong>
+            <p>Currently working at Sheetz with a passion for teamwork and problem-solving.</p>
+          </li>
+        </ul>
+      </section>
+      <section class="center-column box">
+        <h2>Get In Touch</h2>
+        <p>Thank you for visiting my website! I'm always happy to connect with people who share similar interests or want to collaborate on projects.</p>
+        <p>Feel free to reach out to me via email at <a href="mailto:henry.short08@gmail.com">henry.short08@gmail.com</a>. Whether you want to discuss technology, gaming, or any other topics, I'm looking forward to hearing from you.</p>
+        <h3>Contact Form</h3>
+        <form>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br><br>
+          
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+          
+          <label for="phone">Phone Number (XXX-XXX-XXXX):</label><br>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br><br>
+          
+          <label>Type of Message:</label><br>
+          <input type="radio" id="question" name="message-type" value="question">
+          <label for="question">Question</label><br>
+          <input type="radio" id="comment" name="message-type" value="comment">
+          <label for="comment">Comment</label><br>
+          <input type="radio" id="suggestion" name="message-type" value="suggestion">
+          <label for="suggestion">Suggestion</label><br><br>
+          
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" cols="40" minlength="10" required></textarea><br><br>
+          
+          <button type="submit">Submit</button>
+        </form>
+        <h3>Best Ways to Reach Me</h3>
+        <p>The most reliable way to contact me is through email. I try to respond to all messages promptly and would love to hear what you have to say!</p>
+      </section>
+      <section class="right-column box">
+        <h2>About Communication</h2>
+        <p>I believe in open and friendly communication. Whether you're interested in networking, discussing shared interests, or collaborating on projects, I'm here to help.</p>
+        <p>My door (or inbox) is always open for meaningful conversations and new opportunities.</p>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Henry Short | Email: <a href="mailto:henry.short08@gmail.com">henry.short08@gmail.com</a></p>
+  </footer>
+</body>
+</html>
